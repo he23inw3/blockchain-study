@@ -26,4 +26,16 @@ describe("ブロックチェーンのテスト", () => {
 
     expect(bc.isValidChain(bc2.chain)).toBe(true);
   });
+
+  it("ブロックチェーンの整合性検証で整合性が取れていないことを確認", () => {
+    bc2.chain[0].data = "hogehoge";
+    expect(bc.isValidChain(bc2.chain)).toBe(false);
+  });
+
+  it("ブロックチェーンにブロックを追加した後にブロックが改竄されたことを検出することを確認", () => {
+    bc2.addBlock("foo");
+    bc2.chain[1].data = "foofoo";
+    console.log(bc2);
+    expect(bc.isValidChain(bc2.chain)).toBe(false);
+  })
 })
