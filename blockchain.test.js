@@ -23,5 +23,7 @@ describe("ブロックチェーンのテスト", () => {
 
   it("ブロックチェーンの整合性検証", () => {
     bc2.addBlock("hoge");
+
+    expect(bc.isValidChain(bc2.chain)).toBe(true);
   });
 })

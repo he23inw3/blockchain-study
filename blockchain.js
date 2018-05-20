@@ -20,7 +20,7 @@ class BlockChain {
       return false;
     }
 
-    for (let i = 0; i < chain.length; i++) {
+    for (let i = 1; i < chain.length; i++) {
       const block = chain[i];
       const lastBlock = chain[i - 1];
 

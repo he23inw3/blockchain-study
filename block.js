@@ -35,7 +35,7 @@ class Block {
   }
 
   static blockHash(block) {
-    const {timestamp, lashHash, data} = block;
+    const {timestamp, lastHash, data} = block;
     return Block.hash(timestamp, lastHash, data);
   }
 }
