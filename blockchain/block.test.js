@@ -1,5 +1,6 @@
 
 const Block = require("./block");
+const { DIFFUCULITY } = require("../config");
 
 describe("Block", () => {
 
@@ -9,7 +10,7 @@ describe("Block", () => {
     data = "hiroki";
     lastBlock = Block.genesis();
     block = Block.mineBlock(lastBlock, data);
-  })
+  });
 
   it("データのテスト", () => {
     expect(block.data).toEqual(data);
@@ -17,5 +18,7 @@ describe("Block", () => {
 
   it("ハッシュのテスト", () => {
     expect(lastBlock.hash).toEqual(block.lastHash);
+    console.log(block.toString());
   });
+
 });
