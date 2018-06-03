@@ -1,5 +1,6 @@
 
 const Block = require("./block");
+const logger = require("../libs/logger");
 
 class BlockChain {
 
@@ -35,14 +36,14 @@ class BlockChain {
 
   replaceChain(newChain) {
     if (newChain.length <= this.chain.length) {
-      console.log("ブロック数不足のため省略します。");
+      logger.error("ブロック数不足のため省略します。");
       return;
     } else if (!this.isValidChain(newChain)) {
-      console.log("ブロックチェーンデータ不備のため省略します。");
+      logger.error("ブロックチェーンデータ不備のため省略します。");
       return;
     }
 
-    console.log("最新ブロックチェーンデータを更新します。");
+    logger.info("最新ブロックチェーンデータを更新します。");
     this.chain = newChain;
   }
 }

@@ -1,6 +1,6 @@
 
 const SHA256 = require("crypto-js/sha256");
-const Config = require("../config");
+const Config = require("../libs/mineConfig");
 
 class Block {
 
