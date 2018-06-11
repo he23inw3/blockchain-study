@@ -1,2 +1,4 @@
 # logファイルはいらない
 *.log
+
+node_modules/
